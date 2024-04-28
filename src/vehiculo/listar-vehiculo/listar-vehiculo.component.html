@@ -1,0 +1,43 @@
+<br>
+
+<div class="container-md">
+  <h4>TuSegundazo.com</h4>
+</div>
+
+<br>
+
+<div class="container-md d-flex justify-content-center">
+  <div class="col-md-6 d-flex justify-content-center">
+    <img src="../../assets/auto.jpg" alt="TuSegundazo" class="img-fluid">
+  </div>
+</div>
+
+<br>
+
+<div class="container-md">
+  <table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th class="font-weight-bold">#</th>
+      <th>Marca</th>
+      <th>Línea</th>
+      <th>Modelo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vehiculo of vehiculos">
+      <td class="fw-bold">{{ vehiculo.id }}</td>
+      <td>{{ vehiculo.marca }}</td>
+      <td>{{ vehiculo.linea }}</td>
+      <td>{{ vehiculo.modelo }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<footer class="footer text-center mt-5">
+  <div class="container">
+    Contact us: +57 3102105253 - info&#64;tusegundazo.com - &#64;tusegundazo
+  </div>
+</footer>
