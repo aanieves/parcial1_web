@@ -8,6 +8,9 @@ import { Vehiculo } from '../vehiculo';
 })
 export class ListarVehiculoComponent implements OnInit {
   vehiculos!: Vehiculo[];
+  totalRenault: number = 0;
+  totalChevrolet: number = 0;
+  totalNissan: number = 0;
 
   constructor(private vehiculoService: VehiculoService) { }
 
@@ -19,9 +22,13 @@ export class ListarVehiculoComponent implements OnInit {
     this.vehiculoService.getVehiculos()
       .subscribe(vehiculos => {
         this.vehiculos = vehiculos;
+        this.calcularTotales();
       });
   }
 
   calcularTotales(): void {
+    this.totalRenault = this.vehiculos.filter(vehiculo => vehiculo.marca === 'Renault').length;
+    this.totalChevrolet = this.vehiculos.filter(vehiculo => vehiculo.marca === 'Chevrolet').length;
+    this.totalNissan = this.vehiculos.filter(vehiculo => vehiculo.marca === 'Nissan').length;
   }
 }
